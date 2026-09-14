@@ -219,7 +219,7 @@ df_crecimiento = pd.read_sql("""
     ORDER BY TO_CHAR("Fecha" ::date, 'MM-YYYY')
 """, engine)
 
-print(df_crecimiento)
+print(df_crecimiento)   
 
 #EXPORTAR EXCEL 
 df_combinado["Fecha"] = pd.to_datetime(df_combinado["Fecha"]).dt.date
