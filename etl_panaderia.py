@@ -46,35 +46,35 @@ df_ventas = cargar_excel("panaderia_ventas.xlsx")
 
 print("carga completada")
 
-    #VALIDAR CALIDAD
-    validar_productos = validar_calidad(df_productos, "Precio_unitario")
-    validar_clientes = validar_calidad(df_clientes)
-    validar_ventas = validar_calidad(df_ventas)
-    comprobar_ventas = validar_calidad(df_ventas, "Cantidad")
+#VALIDAR CALIDAD
+validar_productos = validar_calidad(df_productos, "Precio_unitario")
+validar_clientes = validar_calidad(df_clientes)
+validar_ventas = validar_calidad(df_ventas)
+comprobar_ventas = validar_calidad(df_ventas, "Cantidad")
 
-    print("NULOS CLIENTES ")
-    print(validar_clientes["nulos"])
+print("NULOS CLIENTES ")
+print(validar_clientes["nulos"])
 
-    print("DUPLICADO CLIENTES")
-    print(validar_clientes["duplicados"])
+print("DUPLICADO CLIENTES")
+print(validar_clientes["duplicados"])
 
-    print("NULOS VENTAS")
-    print(validar_ventas["nulos"])
+print("NULOS VENTAS")
+print(validar_ventas["nulos"])
 
-    print("DUPLICADO VENTAS")
-    print(validar_ventas["duplicados"])
+print("DUPLICADO VENTAS")
+print(validar_ventas["duplicados"])
 
-    print("NULOS PRODUCTOS")
-    print(validar_productos["nulos"])
+print("NULOS PRODUCTOS")
+print(validar_productos["nulos"])
 
-    print("DUPLICADO PRODUCTOS")
-    print(validar_productos["duplicados"])
+print("DUPLICADO PRODUCTOS")
+print(validar_productos["duplicados"])
 
-    print("VALORES INVALIDOS PRODUCTOS (Precio_unitario)")
-    print(validar_productos["valores_invalidos"])
+print("VALORES INVALIDOS PRODUCTOS (Precio_unitario)")
+print(validar_productos["valores_invalidos"])
 
-    print("VALORES INVALIDOS VENTAS (Cantidad)")
-    print(comprobar_ventas["valores_invalidos"])
+print("VALORES INVALIDOS VENTAS (Cantidad)")
+print(comprobar_ventas["valores_invalidos"])
 
 print(df_clientes.dtypes)
 
@@ -218,7 +218,7 @@ df_crecimiento = pd.read_sql("""
     GROUP BY TO_CHAR("Fecha" ::date, 'MM-YYYY')
     ORDER BY TO_CHAR("Fecha" ::date, 'MM-YYYY')
 """, engine)
-
+    
 print(df_crecimiento)   
 
 #EXPORTAR EXCEL 
